@@ -1,0 +1,8 @@
+entries:
+  - title: xss-game
+    post_list:
+      limit: 3
+      category: xss-game
+      show_more: true
+      show_more_text: See more...
+      show_more_url: archive/others/xss-game.html

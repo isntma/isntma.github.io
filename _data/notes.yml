@@ -1,0 +1,8 @@
+entries:
+  - title: Forensics    
+    post_list:
+      limit: 3
+      category: forensics
+      show_more: true
+      show_more_text: See more...
+      show_more_url: /blog/archive/notes/forensics

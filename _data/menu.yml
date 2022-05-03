@@ -1,0 +1,28 @@
+entries:
+  - title: info
+    entries:
+      - title: about page
+        url: about
+      - title: used theme
+        url: "https://github.com/riggraz/no-style-please"
+
+  - title: all posts
+    post_list:
+      limit: 3
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: archive.html
+
+  - title: writeups
+    entries:
+      - title: root-me
+        url: /writeups/root-me
+      - title: htb
+        url: /writeups/htb 
+      - title: others
+        url: /writeups/others
+
+  - title: blog
+    entries:
+      - title: notes
+        url: /blog/notes
