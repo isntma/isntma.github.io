@@ -10,7 +10,7 @@ categories: writeups xss-game
 
 This is the script that violates the web
 
-```markup
+```
 <!-- Challenge -->
 <div id="uganda"></div>
 <script>
@@ -30,6 +30,4 @@ In this challenge we see that the code removes the <> and that everything we ent
 
 The solution given by the creator of the game is as follows
 
-```markup
-"onfocus=alert(1337) autofocus="
-```
+`"onfocus=alert(1337) autofocus="`

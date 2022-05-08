@@ -10,7 +10,7 @@ categories: writeups xss-game
 
 This is the script that violates the web
 
-```markup
+```
 <!-- Challenge -->
 <h2 id="spaghet"></h2>
 <script>
@@ -28,6 +28,4 @@ We have only to add a simple XSS, with *img* and the option *alt* we display som
 
 The solution given by the creator of the game is as follows
 
-```markup
-<svg onload=alert(1337)>
-```
+`<svg onload=alert(1337)>`
