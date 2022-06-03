@@ -1,8 +1,0 @@
-entries:
-  - title: Easy 
-    post_list:
-      limit: 3
-      category: htb.easy
-      show_more: true
-      show_more_text: See more...
-      show_more_url: archive/htb/htb.easy.html

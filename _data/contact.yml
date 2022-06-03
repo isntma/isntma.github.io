@@ -1,0 +1,24 @@
+-
+  type: github
+  icon: 'fab fa-github'
+-
+  type: hackthebox
+  icon: 'fas fa-cube'
+  url: 'https://app.hackthebox.com/profile/987149'
+-
+  type: tryhackme
+  icon: 'fas fa-cloud'
+  url: 'https://tryhackme.com/p/isntma'
+-
+  type: email
+  icon: 'fas fa-envelope'
+  noblank: true            # open link in current tab
+
+# -
+#   type: mastodon 
+#   icon: 'fab fa-mastodon'
+#   url: ''
+# -
+#   type: linkedin
+#   icon: 'fab fa-linkedin'
+#   url:  ''              

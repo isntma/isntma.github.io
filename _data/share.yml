@@ -1,0 +1,9 @@
+platforms:
+  -
+    type: Twitter
+    icon: "fab fa-twitter"
+    link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"
+  -
+    type: Telegram
+    icon: "fab fa-telegram"
+    link: "https://t.me/share/url?url=URL&text=TITLE"
