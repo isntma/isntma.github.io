@@ -12,8 +12,6 @@ PAGES_BRANCH="gh-pages"
 
 SITE_DIR="_site"
 
-_opt_dry_run=false
-
 _config="_config.yml"
 
 _no_pages_branch=false
@@ -36,7 +34,7 @@ help() {
 }
 
 init() {
-  if [[ -z ${GITHUB_ACTION+x} && $_opt_dry_run == 'false' ]]; then
+  if [[ -z ${GITHUB_ACTION+x} ]]; then
     echo "ERROR: It is not allowed to deploy outside of the GitHub Action envrionment."
     echo "Type option '-h' to see the help information."
     exit -1
@@ -122,30 +120,5 @@ main() {
   flush
   deploy
 }
-
-while (($#)); do
-  opt="$1"
-  case $opt in
-  -c | --config)
-    _config="$2"
-    shift
-    shift
-    ;;
-  --dry-run)
-    # build & test, but not deploy
-    _opt_dry_run=true
-    shift
-    ;;
-  -h | --help)
-    help
-    exit 0
-    ;;
-  *)
-    # unknown option
-    help
-    exit 1
-    ;;
-  esac
-done
 
 main
