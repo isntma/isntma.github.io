@@ -6,7 +6,7 @@
 
   ![Gem](https://img.shields.io/gem/v/jekyll-theme-chirpy)
   [![Automatic build](https://github.com/isntma/isntma.github.io/actions/workflows/pages-deploy.yml/badge.svg?branch=main&event=push)](https://github.com/isntma/isntma.github.io/actions/workflows/pages-deploy.yml)
-  ![GitHub](https://img.shields.io/github/license/isntma/isntma.github.io)
+  [![GitHub](https://img.shields.io/github/license/isntma/isntma.github.io)](https://github.com/isntma/isntma.github.io/blob/main/LICENSE)
   [![Stars](https://img.shields.io/github/stars/isntma/isntma.github.io)](https://github.com/isntma/isntma.github.io/stargazers)
   
   [![Demo](https://raw.githubusercontent.com/cotes2020/chirpy-images/main/commons/devices-mockup.png)](https://cotes2020.github.io/chirpy-demo)
