@@ -110,11 +110,6 @@ main() {
   init
   build
   resume_site_dir
-
-  if $_opt_dry_run; then
-    exit 0
-  fi
-
   setup_gh
   backup
   flush
