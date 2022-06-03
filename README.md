@@ -4,11 +4,12 @@
 
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
 
-  [![Gem Version](https://img.shields.io/gem/v/isntma.github.io?color=brightgreen)](https://rubygems.org/gems/jekyll-theme-chirpy)
-  [![Build Status](https://github.com/cotes2020/jekyll-theme-chirpy/workflows/build/badge.svg?branch=master&event=push)](https://github.com/cotes2020/jekyll-theme-chirpy/actions?query=branch%3Amaster+event%3Apush)
-  [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy.svg)](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE)
-
-  [![Devices Mockup](https://raw.githubusercontent.com/cotes2020/chirpy-images/main/commons/devices-mockup.png)](https://cotes2020.github.io/chirpy-demo)
+  ![Gem](https://img.shields.io/gem/v/jekyll-theme-chirpy)
+  [![Automatic build](https://github.com/isntma/isntma.github.io/actions/workflows/pages-deploy.yml/badge.svg?branch=main&event=push)](https://github.com/isntma/isntma.github.io/actions/workflows/pages-deploy.yml)
+  ![GitHub](https://img.shields.io/github/license/isntma/isntma.github.io)
+  [![Stars](https://img.shields.io/github/stars/isntma/isntma.github.io)](https://github.com/isntma/isntma.github.io/stargazers)
+  
+  [![Demo](https://raw.githubusercontent.com/cotes2020/chirpy-images/main/commons/devices-mockup.png)](https://cotes2020.github.io/chirpy-demo)
 
 </div>
 
@@ -53,4 +54,4 @@ For more details on usage, please refer to the tutorial on the [demo website](ht
 
 ## License
 
-This work is published under [MIT](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE) License.
+This work is published under [MIT](https://github.com/isntma/isntma.github.io/blob/main/LICENSE) License.
