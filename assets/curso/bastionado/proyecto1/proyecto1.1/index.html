@@ -1,0 +1,96 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Proyecto 1.1</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="0001"
+                  title="Proyecto 1.1"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introducción" duration="2">
+        <h2 is-upgraded>¿Qué BIOS/UEFI se usará?</h2>
+<p>En mi caso usaré este <a href="https://download.lenovo.com/bsco/index.html" target="_blank">Simulador</a> de Lenovo con todos los modelos de sus portátiles. Yo escogeré la del <strong>Lenovo Flex 5</strong> ya que es un portátil el cuál he usado bastante.</p>
+<h2 is-upgraded>¿Qué parámetros vamos a configurar?</h2>
+<p>Esta configuración es necesaria si queremos asegurar algo más nuestro dispositivo para evitar la posible manipulación del mismo.</p>
+<aside class="warning"><p>Los parámetros pueden variar dependiendo del modelo que hayamos escogido</p>
+</aside>
+<p>Aquí una pequeña lista de los parámetros más comunes a configurar:</p>
+<ul>
+<li>Contraseña de admin de la BIOS: Esta se solicita al solicitar una modificación de algún parámetro de la BIOS.- Contraseña de usuario de la BIOS: Al igual que la anterior pero en este caso parámetros básicos.</li>
+</ul>
+<aside class="warning"><p>El user password también puede referirse a la siguiente.</p>
+</aside>
+<ul>
+<li>Contraseña de arranque: Activado solicita contraseña para poder arrancar el equipo. Esto en servidores no tiene mucho sentido.</li>
+<li>Permiso para el arranque USB: Deshabilitado no será posible arrancar desde unidades USB.</li>
+<li>Orden de arranque: Define el orden con el que se ejecutarán los distintos dispositivos de arranque.</li>
+<li>Secure Boot: Deniega la ejecución de software no firmado.</li>
+</ul>
+<h2 is-upgraded>¿Cómo acceder a la BIOS/UEFI?</h2>
+<p>Tendríamos que buscar el modelo de la BIOS en Internet y ver qué tecla presionar al arrancar el dispositivo. Normalmente es <em>F2/F12/SUPR</em>. Y también fijarnos si tenemos que presionar la tecla FN para accionar las teclas de función.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseñas" duration="2">
+        <p>Para empezar iremos a lo más básico, lo cuál es configurar credenciales para la BIOS y para el arranque del dispositivo. Esto se hará dirigiendonos a la pestaña de Seguridad (Security), una vez ahí le daremos <em>Intro</em> a cada opción configurando así una contraseña para administrador y otra para el arranque.</p>
+<p class="image-container"><img alt="Security" src="img/7d5eee8b77bc077d.png"></p>
+<aside class="warning"><p>En este caso el <em>User Password</em> se refiere a la de arranque.</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Opciones de arranque" duration="2">
+        <h2 is-upgraded>USB Boot y Orden de arranque</h2>
+<p>Para el <strong>USB Boot</strong> lo dejaremos en deshabilitado para que no sea posible el arrancar desde dispositivos externos USB. Esto aumentará bastante la seguridad en nuestro dispositivo ya que nos protegeremos de posibles Live USB con Linux que puedan extraer información de nuestro disco en caso de que no esté cifrado.</p>
+<p>En el <strong>Orden de arranque</strong> dejaremos todos los dispositivos externos como última prioridad y el que usemos de primera prioridad. Hay BIOS/UEFI que te permiten eliminar directamente una opción de arranque por lo que retiraremos todos y dejaremos la que usa nuestro S.O.</p>
+<p class="image-container"><img alt="Boot" src="img/84e5d7150433bac.png"></p>
+<h2 is-upgraded>Secure Boot</h2>
+<p>También incluiré aquí el <strong>Secure Boot</strong> que está en la pestaña de Seguridad. Esto puede ser influenciado por el S.O que estés usando.</p>
+<p>Si usas Linux dependiendo de que distribución puede que tengas que dejar el Secure Boot deshabilitado, en caso de que sea compatible siempre priorizar el dejarlo habilitado. Y en caso de que tengas Windows lo dejas habilitado para evitar que arranque software &#34;no confiable&#34;.</p>
+<p class="image-container"><img alt="Secure" src="img/8d389afe7ebccd84.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Otras opciones" duration="1">
+        <h2 is-upgraded>I/O Port Access</h2>
+<p>Una opción muy interesante es la de desactivar algunos de los accesos de Entrada/Salida del dispositivo. Por ejemplo desactivar funciones que no usamos y así tener menos puntos de &#34;ataque&#34;. Esta opción se encuentra en la pestaña <em>Security</em> (se llama <strong>I/O Port Access</strong>) y al entrar en la opción veremos lo siguiente:</p>
+<p class="image-container"><img alt="IO" src="img/4bc4f402aca93f6e.png"></p>
+<aside class="warning"><p>En el caso de este modelo no hay mucho más que ver, puede haber alguna que otra opción interesante pero las importantes ya están cubiertas.</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

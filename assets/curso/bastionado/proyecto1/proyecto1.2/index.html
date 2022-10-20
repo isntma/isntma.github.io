@@ -1,0 +1,106 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Proyecto 1.2</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="0001"
+                  title="Proyecto 1.2"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introducción" duration="2">
+        <h2 is-upgraded>¿Qué es GRUB?</h2>
+<p>Es un cargador de arranque o bootloader que nos permite elegir que sistema operativo arrancar de los instalados. Se usa principalmente en sistemas Linux.</p>
+<h2 is-upgraded>¿Qué forma GRUB?</h2>
+<p>Esta formado por un conjunto de scripts y ficheros, entre ellos:</p>
+<ul>
+<li><strong>/boot/grub/grub.cfg</strong>: Contiene la configuración de opciones de menú de GRUB2.</li>
+<li><strong>/etc/default/grub</strong>: Controla la configuración de usuario y entorno de GRUB2.</li>
+<li><strong>Scripts en /etc/grub.d/</strong>: Estos scripts se leen al ejecutar <code>grub-mkconfig</code> o <code>update-grub</code> y sus instrucciones sirven para modificar el <em>/etc/default/grub.cfg</em>.</li>
+<li><strong>/boot/grub/custom.cfg</strong>: Elemento opcional para añadir elementos personalizados al menú de arranque. Es una alternativa a la modificación del script <em>40_custom</em>.</li>
+</ul>
+<p class="image-container"><img alt="10.png" src="img/1872a3902c594f57.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Copia de seguridad" duration="0">
+        <p>Para comenzar haremos una copia de seguridad de los archivos/scripts del grub. Esto se hará copiando la carpeta <strong>/etc/grub.d/</strong> a otro directorio, preferiblemente a uno externo por si tenemos cualquier problema.</p>
+<p class="image-container"><img alt="3.png" src="img/9f3ffa83b83fe5c9.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ocultación del arranque" duration="2">
+        <p>Esto es una de las cosas más sencillas que se pueden configurar en el grub y pueden evitar el acceso del dispositivo de forma no autorizada en el caso que un atacante tenga nuestro equipo de forma física.</p>
+<p>Para esto tendremos que modificar el archivo <strong>/etc/default/grub</strong> cambiando el parámetro <em>GRUB_TIMEOUT</em> a <em>0</em>.</p>
+<p class="image-container"><img alt="1.png" src="img/8733f9604ff2a2ce.png"></p>
+<aside class="warning"><p>Después de cada modificación en archivos de configuración del GRUB no olvidar ejecutar <strong><em>update-grub2</em></strong> o <strong><em>update-grub</em></strong></p>
+</aside>
+<p class="image-container"><img alt="2.png" src="img/4cebc5f031a622c6.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de arranque" duration="2">
+        <h2 is-upgraded>En plano</h2>
+<p>Primero abriremos con un editor el archivo <strong>00_header</strong> ubicado en <strong>/etc/grub.d/</strong>. Una vez dentro nos iremos al final del archivo y escribiremos lo siguiente:</p>
+<p class="image-container"><img alt="4.png" src="img/20addbff8aab20e9.png"></p>
+<aside class="warning"><p>Las contraseñas no tienen porqué tener relación con las de los usuarios del sistema. En mi caso el usuario root tiene password 1234 e ismael 4321.</p>
+</aside>
+<h2 is-upgraded>Cifrar la contraseña</h2>
+<p>Una vez hecho lo anterior podremos cambiar la contraseña escrita totalmente en plano a su valor cifrado. Esto se hará con el comando <em>grub-mkpasswd-pbkdf2</em>, nos pedirá qué contraseña queremos cifrar y su confirmación y ya nos imprimirá por pantalla el hash. Hacemos esto con todas las contraseñas que tengamos en el anterior archivo.</p>
+<p class="image-container"><img alt="5.png" src="img/fea258b91c3419cc.png"></p>
+<p>Ahora simplemente modificamos en lo escrito en <strong>00_header </strong><em>password</em> por <strong><em>password_pbkdf2</em></strong> y cambiamos la contraseña en plano por su hash correspondiente.</p>
+<p class="image-container"><img alt="6.png" src="img/80f2c50847fd6c1f.png"></p>
+<p>Por último hacemos <em>update-grub2</em>.</p>
+<p class="image-container"><img alt="7.png" src="img/c717ad1b3916e426.png"></p>
+<h2 is-upgraded>Comprobación</h2>
+<p>Una vez terminado al reiniciar veremos lo siguiente:</p>
+<p class="image-container"><img alt="8.png" src="img/14253ffa71ec3300.png"></p>
+<p>Esto significa que las opciones que introducimos anteriormente han funcionado y tendremos nuestras entradas del grub protegido.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Otras opciones" duration="1">
+        <h2 is-upgraded>GRUB_DEFAULT</h2>
+<p>Tenemos otras opciones que pueden estar interesantes como <strong>GRUB_DEFAULT</strong> esta opción definirá cuál entrada del grub se ejecutará por defecto, así que en caso de tener varios sistemas poner la posición al cuál queremos entrar. Esto junto al <strong>TIMEOUT=0</strong> podría forzar la entrada a un sistema operativo concreto.</p>
+<p class="image-container"><img alt="9.png" src="img/d190ea2c79d130b7.png"></p>
+<h2 is-upgraded>Restricción de usuarios</h2>
+<p>Para securizar más aún la autenticación del GRUB podemos decirle al sistema de que sólo se pueda iniciar sesión con usuarios específicos.</p>
+<p>Esto se hace en <strong>/etc/grub.d/10_linux</strong> buscando la siguiente línea e introduciendo detrás de ${CLASS} <em>–users</em> seguido de los usuarios.</p>
+<p class="image-container"><img alt="11.png" src="img/b50635fc63df55e.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
