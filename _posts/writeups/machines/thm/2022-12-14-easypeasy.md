@@ -122,11 +122,8 @@ Para desencriptarlo lo haremos directamente con terminal de la siguiente forma.
 
 ```console
 $ echo "ZmxhZ3tmMXJzN19mbDRnfQ==" | base64 -d                                       
-flag{f1rs7_fl4g}
+flag{**********}
 ```
-> Primera flag: **flag{f1rs7_fl4g}**
-{: .prompt-tip }
-
 ### Segunda flag
 
 Aparte de esa primera página tenemos que recordar que con **nmap** también vimos que el servicio apache está abierto en el puerto 65524. Entraremos desde el navegador a ver si se encuentra algo.
@@ -175,19 +172,13 @@ Si vamos probando por páginas de crack de hashes puede que nos lleve un rato po
 
 ![duckduck](duckduck.png)
 
-> Segunda flag: **flag{1m_s3c0nd_fl4g}**
-{: .prompt-tip }
-
 ### Tercera flag
 
 Para esta será algo tan sencillo como hacer *CTRL+F* en el código fuente del index del apache, y buscar por 'flag'. Directamente aparecerá en texto plano la flag para introducirla como tercera flag.
 
 ![flag3](flag3.png) 
 
-> Tercera flag: **flag{9fdafbd64c47471a8f54cd3fc64cd312}**
-{: .prompt-tip }
-
-### Cuarta "flag"
+### Cuarta flag
 
 En este caso seguiremos buscando en el código fuente y como para el anterior buscaremos, pero esta vez por 'hidden', con esto encontraremos otro párrafo oculto, contiene lo siguiente:
 
@@ -198,9 +189,6 @@ Es otro texto en base, ahora es base62.
 Para su desencriptación usaremos [Cyberchef](https://cyberchef.io) la cuál es una muy buena página para temas de criptografía como este.
 
 ![cyberchef](cyberchef.png) 
-
-> Cuarta "flag": **/n0th1ng3ls3m4tt3r**
-{: .prompt-tip }
 
 ### Quinta flag
 
@@ -242,9 +230,6 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
 ```
 
-> Y aquí tendremos la quinta "flag": mypasswordforthatjob
-{: .prompt-tip}
-
 ### Sexta flag
 
 Antes descargamos la imagen que había en el directorio oculto del Apache, ahora usaremos `steghide` porque lo más probable es que la anterior contraseña que hemos extraído del hash sea la *passphrase* de datos ocultos dentro de la imagen utilizado técnicas de esteganografía.
@@ -267,9 +252,6 @@ Pasaremos el binario a texto en mi caso he usado [binarytotext.net](https://bina
 
 ![binary](binary.png) 
 
-> Sexta "flag": **iconvertedmypasswordtobinary**
-{: .prompt-tip}
-
 ### Séptima flag
 
 Tendremos que iniciar ssh con las credenciales que tenemos, y revisar en la carpeta personal del usuario por la flag.
@@ -279,9 +261,6 @@ Tendremos que iniciar ssh con las credenciales que tenemos, y revisar en la carp
 Vemos que viene una flag pero está rara, esta cifrada con Caesar con una rotación de 13 posiciones, también llamado ROT13. Si usamos [dcode.fr](https://www.dcode.fr/rot-13-cipher) para desencriptarlo veremos que nos devuelve la flag.
 
 ![rot](rot.png) 
-
-> Séptima flag: **flag{n0wits33msn0rm4l}**
-{: .prompt-tip}
 
 Con esto habríamos completado todas las respuestas de la máquina excepto la última que se dejará para más adelante.
 
