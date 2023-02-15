@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-10-14T13:44:06+02:00",
+  "id": "0001",
+  "duration": 7,
+  "title": "Proyecto 1.1",
+  "summary": "Proyecto 1",
+  "source": "proyecto1.1.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "url": "0001"
+}
