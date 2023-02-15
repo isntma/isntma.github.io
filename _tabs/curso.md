@@ -17,7 +17,8 @@ order: 4
 
 ## Prácticas y proyectos
 
-| Bastionado |                                                                  |
-| ---------- |:----------------------------------------------------------------:|
+| BRS |                                                                  |
+| --- |:----------------------------------------------------------------:|
 | Proyecto 1 | [Proyecto 1.1](../assets/curso/bastionado/proyecto1/proyecto1.1) |
 |            | [Proyecto 1.2](../assets/curso/bastionado/proyecto1/proyecto1.2) |
+| Proyecto 8 | [Proyecto 8](https://isntma.github.io/notes/brs/proyecto_8) |
