@@ -266,7 +266,15 @@ Con esto habríamos completado todas las respuestas de la máquina excepto la ú
 
 ### Privilege Escalation
 
-> Próximamente...
+Para esto revisaremos los puntos más básicos, como el *sudo -l*, directorio */tmp* y en este caso el que nos va a dar la escalada va a ser el *crontab* de este sistema. Como podemos ver nos avisa de que se ejecutará como root todo lo que se ejecute vía crontab. 
+
+![crontab](crontab.png)  
+
+> En mi caso añado una reverse shell con *netcat*.
+
+Al dejar *netcat* escuchando y haber añadido la línea que genera la conexión a la reverse shell en crontab sólo quedará esperar.
+
+![root](root.png) 
 
 ## Conclusion
 
